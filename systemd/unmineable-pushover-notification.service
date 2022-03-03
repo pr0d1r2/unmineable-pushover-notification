@@ -5,7 +5,7 @@ Description=unmineable.com pushover notification
 TimeoutStartSec=5
 TimeoutStopSec=5
 Restart=always
-RestartSec=300s
+RestartSec=900s
 
 ExecStart=/usr/local/bin/unmineable-pushover-notification
 
