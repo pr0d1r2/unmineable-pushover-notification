@@ -1,7 +1,7 @@
 # unmineable-workers
 
-Send pushover notifications from unmineable accounts. Running every five
-minutes on systemd.
+Send pushover notifications from unmineable accounts. Running every
+fifteen minutes on systemd.
 
 ## Why?
 
