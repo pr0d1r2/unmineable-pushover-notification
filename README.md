@@ -41,8 +41,9 @@ echo "userxxxxxxxxxxxxxxxxxxxxxxxxxx:applicationyyyyyyyyyyyyyyyyyyy' >> /etc/unm
 
 ## Related
 
-There is also [unmineable-miner](https://github.com/pr0d1r2/unmineable-miner).
-There is also [unmineable-workers](https://github.com/pr0d1r2/unmineable-workers).
+There are also:
+- [unmineable-miner](https://github.com/pr0d1r2/unmineable-miner)
+- [unmineable-workers](https://github.com/pr0d1r2/unmineable-workers)
 
 ## Support
 
