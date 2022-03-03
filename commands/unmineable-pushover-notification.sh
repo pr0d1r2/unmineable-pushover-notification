@@ -2,7 +2,7 @@
 
 set -e -x
 
-WORKERS_OFFLINE=""
+WORKERS_OFFLINE=()
 
 test -d /usr/local/share/unmineable-workers || git clone https://github.com/pr0d1r2/unmineable-workers /usr/local/share/unmineable-workers
 cd /usr/local/share/unmineable-workers
@@ -12,13 +12,13 @@ bundle install
 for ACCOUNT_DETAILS in "$(cat /etc/unmineable-accounts)"
 do
   ACCOUNT="$(echo "$ACCOUNT_DETAILS" | cut -f 1 -d :)"
-  EXPECTED_HOSTS="$(echo "$ACCOUNT_DETAILS" | cut -f 2 -d : | tr -d ,)"
+  EXPECTED_HOSTS="$(echo "$ACCOUNT_DETAILS" | cut -f 2 -d : | tr "," " ")"
 
   echo "$ACCOUNT" > .account
 
   for OFFLINE_WORKER in $(bundle exec bin/all_offline $EXPECTED_HOSTS)
   do
-    WORKERS_OFFLINE="$WORKERS_OFFLINE $OFFLINE_WORKER"
+    WORKERS_OFFLINE+=("$OFFLINE_WORKER")
   done
 done
 
