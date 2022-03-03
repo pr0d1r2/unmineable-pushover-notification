@@ -16,3 +16,6 @@ touch /etc/unmineable-pushover-devices
 
 echo "Add your unmineable accounts with expected workers to: /etc/unmineable-accounts"
 echo "Add your pushover devices to: /etc/unmineable-pushover-devices"
+
+systemctl enable unmineable-pushover-notification
+systemctl start unmineable-pushover-notification
