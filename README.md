@@ -12,7 +12,7 @@ minutes on systemd.
 Tested on Ubuntu 20.04 server.
 
 ```bash
-git clone git@github.com/pr0d1r2/unmineable-pushover-notification
+git clone https://github.com/pr0d1r2/unmineable-pushover-notification
 cd unmineable-pushover-notification
 bash install.sh
 ```
