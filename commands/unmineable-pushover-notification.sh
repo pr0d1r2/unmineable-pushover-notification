@@ -18,6 +18,11 @@ do
 
   for OFFLINE_WORKER in $(bundle exec bin/all_offline $EXPECTED_HOSTS)
   do
+    WORKERS_OFFLINE_FIRST+=("$OFFLINE_WORKER")
+  done
+
+  for OFFLINE_WORKER in $(bundle exec bin/all_offline $WORKERS_OFFLINE_FIRST)
+  do
     WORKERS_OFFLINE+=("$OFFLINE_WORKER")
   done
 done
