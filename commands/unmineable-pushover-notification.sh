@@ -21,10 +21,12 @@ do
     WORKERS_OFFLINE_FIRST+=("$OFFLINE_WORKER")
   done
 
-  for OFFLINE_WORKER in $(bundle exec bin/all_offline $WORKERS_OFFLINE_FIRST)
-  do
-    WORKERS_OFFLINE+=("$OFFLINE_WORKER")
-  done
+  if [ -n "$WORKERS_OFFLINE_FIRST" ]; then
+    for OFFLINE_WORKER in $(bundle exec bin/all_offline $WORKERS_OFFLINE_FIRST)
+    do
+      WORKERS_OFFLINE+=("$OFFLINE_WORKER")
+    done
+  fi
 done
 
 case "$WORKERS_OFFLINE" in
