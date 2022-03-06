@@ -22,6 +22,7 @@ do
   done
 
   if [ -n "$WORKERS_OFFLINE_FIRST" ]; then
+    sleep 60
     for OFFLINE_WORKER in $(bundle exec bin/all_offline $WORKERS_OFFLINE_FIRST)
     do
       WORKERS_OFFLINE+=("$OFFLINE_WORKER")
