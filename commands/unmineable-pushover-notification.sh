@@ -25,6 +25,14 @@ do
     sleep 60
     for OFFLINE_WORKER in $(bundle exec bin/all_offline $WORKERS_OFFLINE_FIRST)
     do
+      WORKERS_OFFLINE_SECOND+=("$OFFLINE_WORKER")
+    done
+  fi
+
+  if [ -n "$WORKERS_OFFLINE_SECOND" ]; then
+    sleep 300
+    for OFFLINE_WORKER in $(bundle exec bin/all_offline $WORKERS_OFFLINE_SECOND)
+    do
       WORKERS_OFFLINE+=("$OFFLINE_WORKER")
     done
   fi
